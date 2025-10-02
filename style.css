@@ -1,0 +1,185 @@
+/* Thiết lập cơ bản */
+:root {
+    --primary-color: #007bff; /* Màu xanh dương chính */
+    --secondary-color: #28a745; /* Màu xanh lá phụ (cho nút) */
+    --text-color: #333;
+    --background-light: #f4f7f9; /* Màu nền sáng */
+    --card-background: #ffffff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Các Section chung */
+section {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* PHẦN TỪ VỰNG */
+.vocab-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.vocab-item:last-child {
+    border-bottom: none;
+}
+
+.word {
+    font-weight: bold;
+    font-size: 1.1em;
+    flex: 2; /* Chiếm 2 phần */
+}
+
+.pronunciation {
+    color: #cc0000; /* Màu đỏ cho phiên âm */
+    font-style: italic;
+    flex: 1.5;
+}
+
+.meaning {
+    color: #666;
+    flex: 2;
+}
+
+.action-buttons {
+    flex: 2.5;
+    text-align: right;
+}
+
+/* Nút chức năng */
+.record-btn, .download-btn {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.record-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.record-btn:hover {
+    background-color: #0056b3;
+}
+
+.download-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.download-btn:hover {
+    background-color: #5a6268;
+}
+
+/* PHẦN CÂU VÍ DỤ */
+.sentence-card {
+    background-color: #fff8e1; /* Màu nền ấm cho câu ví dụ */
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sentence-text {
+    font-size: 1.15em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.sentence-translation {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* Nút trong Sentence Section */
+.record-btn.primary, .download-btn.primary {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #999;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive cho màn hình nhỏ hơn (điện thoại) */
+@media (max-width: 768px) {
+    .vocab-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .word, .pronunciation, .meaning, .action-buttons {
+        flex: none;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .action-buttons {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .record-btn, .download-btn {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
